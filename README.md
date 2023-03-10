@@ -14,7 +14,3 @@ The code included in this sample is a snippet from the monitoring portion of the
 ## sample_api.go
 
 This code snippet presents a function called addTripProcedures. This function is called by POST and PUT requests to the trip endpoint of the API. Users call this endpoint to add and update details of their camping trips. Updating a camping trip can require updates to up to 4 different collections (tables) in Firestore. This function receives a list of procedures indicating which Firestore collections require updates. As the function loops through the list of procedures, it records which procedures it has partially or fully completed thus far. If at any moment one of the database updates errors then the function returns the list of completed procedures along with details about each procedure. Then another function is called to undo all the previously completed database updates. This ensures the updates to the database are atomic. If no error occurs then the function returns nil for the error value indicating all procedures completed successfully.
-
-### Coming Soon to a DNS Server near you:
-
-Check out [lantern.watch](https://lantern.watch/) for your camping adventures!
